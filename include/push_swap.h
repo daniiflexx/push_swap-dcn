@@ -6,7 +6,7 @@
 /*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:03:48 by danicn            #+#    #+#             */
-/*   Updated: 2022/08/26 15:09:13 by danicn           ###   ########.fr       */
+/*   Updated: 2022/08/30 17:58:38 by danicn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ int     rrotate_rr(t_list **s1, t_list **s2);
 int     rrotate_a(t_list **s1);
 int     rrotate_(t_list **s1);
 int     less_than_six(t_list **s1, t_list **s2, int argc);
-
-
-
+int	    three_nums(t_list **s1);
 
 #endif

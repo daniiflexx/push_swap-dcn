@@ -1,6 +1,6 @@
 NAME = push_swap
 LIBFT = libft/libft.a
-SRCS = src/push_swap.c src/libstack.c
+SRCS = src/push_swap.c src/libstack.c src/algorithms.c
 OBJS = $(patsubst src/%, obj/%, $(SRCS:.c=.o))
 ############################
 $(NAME): $(OBJS) $(LIBFT)

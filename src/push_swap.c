@@ -6,7 +6,7 @@
 /*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:51:31 by danicn            #+#    #+#             */
-/*   Updated: 2022/08/26 17:48:00 by danicn           ###   ########.fr       */
+/*   Updated: 2022/08/30 17:58:57 by danicn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ int	less_than_six(t_list **s1, t_list **s2, int argc)
 {
 	if (argc == 3)
 	{
-		if (*(int *)(*s1)->content < *(int *)(*s1)->next->content )
+		if (*(int *)(*s1)->content < *(int *)(*s1)->next->content)
 			swap_a(s1);
 	}
 	if (argc == 4)
-		
+		three_nums(s1);
 }
 
 int	main(int argc, char *argv[])
