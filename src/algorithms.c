@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithms.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 17:46:35 by danicn            #+#    #+#             */
-/*   Updated: 2022/08/30 18:47:10 by danicn           ###   ########.fr       */
+/*   Updated: 2022/09/12 21:47:52 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,13 @@ int	three_nums(t_list **s1)
 		rrotate_a(s1);
 		swap_a(s1);	
 	}
+	return (0);
 }
 
-int	four_or_five_nums(t_list **s1, t_list **s2)
+/*int	four_or_five_nums(t_list **s1, t_list **s2)
 {
 	if ((*s1)->next->next->next->next != NULL)
 		push_b(s1, s2);
 	push_b(s1, s2);
 	if ()
-}
+}*/

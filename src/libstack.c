@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libstack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:48:48 by danicn            #+#    #+#             */
-/*   Updated: 2022/08/26 14:58:21 by danicn           ###   ########.fr       */
+/*   Updated: 2022/09/12 21:49:00 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,6 +211,7 @@ int rotate_rr(t_list **s1, t_list **s2)
 	if (rotate(s2) == -1)
 		return (-1);
 	write(1, "rr\n", 3);
+	return (0);
 }
 
 int rrotate_a(t_list **s1)
@@ -267,4 +268,5 @@ int	rrotate_rr(t_list **s1, t_list **s2)
 	if (rrotate(s2) == -1)
 		return (-1);
 	write(1, "rrr\n", 4);
+	return (0);
 }
