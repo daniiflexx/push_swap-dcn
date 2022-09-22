@@ -6,7 +6,7 @@
 /*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:48:48 by danicn            #+#    #+#             */
-/*   Updated: 2022/09/12 21:49:00 by dcruz-na         ###   ########.fr       */
+/*   Updated: 2022/09/20 13:15:47 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	swap_a(t_list **list)
 		(*list)->next = aux;
 		aux->next = NULL;
 	}
-	else 
+	else
 	{
 		iter = *list;
 		while (iter->next->next->next != NULL)

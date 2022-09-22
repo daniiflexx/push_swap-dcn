@@ -6,7 +6,7 @@
 /*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:51:31 by danicn            #+#    #+#             */
-/*   Updated: 2022/09/12 22:34:44 by dcruz-na         ###   ########.fr       */
+/*   Updated: 2022/09/22 20:15:46 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,10 @@ int	less_than_six(t_list **s1, t_list **s2, int argc)
 	}
 	if (argc == 4)
 		three_nums(s1);
+	if (argc == 5)
+		four_nums(s1, s2);
+	if (argc == 6)
+		five_nums(s1, s2);
 	return (0);
 }
 
@@ -65,7 +69,7 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 	{		
 		write(2, "Error\n", 6);
-		return (1);		
+		return (1);
 	}
 	if (init_stacks(&stack1, &stack2, argv, argc) > 0)
 	{
@@ -74,6 +78,8 @@ int	main(int argc, char *argv[])
 	}
 	if (argc < 7)
 		less_than_six(&stack1, &stack2, argc);
+	else
+		radix_sort();
 	ft_lstclear(&stack1, int_free);
 	ft_lstclear(&stack2, int_free);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:03:48 by danicn            #+#    #+#             */
-/*   Updated: 2022/08/30 17:58:38 by danicn           ###   ########.fr       */
+/*   Updated: 2022/09/20 16:38:30 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ int     rrotate_a(t_list **s1);
 int     rrotate_(t_list **s1);
 int     less_than_six(t_list **s1, t_list **s2, int argc);
 int	    three_nums(t_list **s1);
+int     four_nums(t_list **s1, t_list **s2);
+int     five_nums(t_list **s1, t_list **s2);
 
 #endif
