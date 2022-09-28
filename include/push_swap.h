@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:03:48 by danicn            #+#    #+#             */
-/*   Updated: 2022/09/20 16:38:30 by dcruz-na         ###   ########.fr       */
+/*   Updated: 2022/09/28 13:24:39 by danicn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 # include "libft.h"
 
 int		init_stacks(t_list **stack1, t_list **stack2, char **argv, int argc);
@@ -38,5 +39,8 @@ int     less_than_six(t_list **s1, t_list **s2, int argc);
 int	    three_nums(t_list **s1);
 int     four_nums(t_list **s1, t_list **s2);
 int     five_nums(t_list **s1, t_list **s2);
+int     radix_sort(t_list *s1, t_list *s2);
+int     lst_isOrdered(t_list *s1);
+
 
 #endif

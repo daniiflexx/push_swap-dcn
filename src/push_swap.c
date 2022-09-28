@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:51:31 by danicn            #+#    #+#             */
-/*   Updated: 2022/09/22 20:15:46 by dcruz-na         ###   ########.fr       */
+/*   Updated: 2022/09/28 13:28:29 by danicn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	init_stacks(t_list **stack1, t_list **stack2, char **argv, int argc)
 
 int	less_than_six(t_list **s1, t_list **s2, int argc)
 {
+	
 	if (argc == 3)
 	{
 		if (*(int *)(*s1)->content < *(int *)(*s1)->next->content)
@@ -76,10 +77,13 @@ int	main(int argc, char *argv[])
 		write(2, "Error\n", 6);
 		return (1);
 	}
-	if (argc < 7)
-		less_than_six(&stack1, &stack2, argc);
-	else
-		radix_sort();
+	if (lst_isOrdered(stack1) == 0)
+	{
+		if (argc < 7)
+			less_than_six(&stack1, &stack2, argc);
+		else
+			radix_sort(stack1, stack2);
+	}
 	ft_lstclear(&stack1, int_free);
 	ft_lstclear(&stack2, int_free);
 }
