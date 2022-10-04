@@ -6,7 +6,7 @@
 /*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 17:46:35 by danicn            #+#    #+#             */
-/*   Updated: 2022/09/28 13:18:49 by danicn           ###   ########.fr       */
+/*   Updated: 2022/10/01 04:51:50 by danicn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,7 @@ t_list	*sort(t_list *lst)
 		}
 		lst = lst->next;
 	}
+	free(arr);
 	return (l);
 }
 int	lst_isOrdered(t_list *s1)
@@ -167,7 +168,7 @@ int	lst_isOrdered(t_list *s1)
 }
 int radix_sort(t_list *s1, t_list *s2)
 {
-	t_list *lst;
+	t_list *lst, *l;
 	int size;
 	int	i;
 	int	j;
@@ -178,9 +179,9 @@ int radix_sort(t_list *s1, t_list *s2)
 		size = ft_lstsize(lst);
 		j = 1;
 		while (lst_isOrdered(lst) == 0)
-		{
+		{	
 			i = 0;
-			while (i < size)
+			while (i < size && lst_isOrdered(lst) == 0)
 			{
 				if (*(int *)ft_lstlast(lst)->content & j)
 					rotate_a(&lst);
@@ -192,6 +193,13 @@ int radix_sort(t_list *s1, t_list *s2)
 				push_a(&lst, &s2);
 			j = j << 1;
 		}
+		l = lst;
+			while (l != NULL){
+				free(l->content);
+				lst = l->next;
+				free(l);
+				l = lst;
+			}
 	}
 	return 0;
 }
