@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   algorithms.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 17:46:35 by danicn            #+#    #+#             */
-/*   Updated: 2022/10/01 04:51:50 by danicn           ###   ########.fr       */
+/*   Updated: 2022/10/04 19:56:30 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	three_nums(t_list **s1)
+void	three_nums(t_list **s1)
 {
 	if (*(int *)(*s1)->content > *(int *)(*s1)->next->content
 	&& *(int *)(*s1)->next->content < *(int *)(*s1)->next->next->content
@@ -37,12 +37,11 @@ int	three_nums(t_list **s1)
 	&& *(int *)(*s1)->content > *(int *)(*s1)->next->next->content)
 	{
 		rrotate_a(s1);
-		swap_a(s1);	
+		swap_a(s1);
 	}
-	return (0);
 }
 
-int	four_nums(t_list **s1, t_list **s2)
+void	four_nums(t_list **s1, t_list **s2)
 {
 	push_b(s1, s2);
 	three_nums(s1);
@@ -66,10 +65,9 @@ int	four_nums(t_list **s1, t_list **s2)
 	}
 	else
 		push_a(s1, s2);
-	return (0);
 }
 
-int	five_nums(t_list **s1, t_list **s2)
+void	five_nums(t_list **s1, t_list **s2)
 {
 	push_b(s1, s2);
 	four_nums(s1, s2);
@@ -102,32 +100,40 @@ int	five_nums(t_list **s1, t_list **s2)
 	}
 	else
 		push_a(s1, s2);
-	return (0);
 }
-void insertionSort(int arr[], int n)
+
+void	insertion_sort(int arr[], int n)
 {
-    int i, key, j;
-    for (i = 1; i < n; i++) {
-        key = arr[i];
-        j = i - 1;
-        while (j >= 0 && arr[j] < key) {
-            arr[j + 1] = arr[j];
-            j = j - 1;
-        }
-        arr[j + 1] = key;
-    }
+	int	i;
+	int	key;
+	int	j;
+
+	i = 1;
+	while (i < n)
+	{
+		key = arr[i];
+		j = i - 1;
+		while (j >= 0 && arr[j] < key)
+		{
+			arr[j + 1] = arr[j];
+			j = j - 1;
+		}
+		arr[j + 1] = key;
+		i++;
+	}
 }
+
 t_list	*sort(t_list *lst)
 {
-	int *arr;
-	int	i;
-	int size;
-	t_list *l;
-	
+	int		*arr;
+	int		i;
+	int		size;
+	t_list	*l;
+
 	size = ft_lstsize(lst);
 	arr = (int *) malloc(sizeof(int) * size);
 	if (!arr)
-		return NULL;
+		return (NULL);
 	i = 0;
 	l = lst;
 	while (i < size)
@@ -136,18 +142,18 @@ t_list	*sort(t_list *lst)
 		i++;
 		lst = lst->next;
 	}
-	insertionSort(arr, size);
+	insertion_sort(arr, size);
 	i = 0;
 	lst = l;
 	while (lst != NULL)
 	{
 		i = 0;
-		while(i < size)
+		while (i < size)
 		{
 			if (arr[i] == *(int *)lst->content)
 			{
 				*(int *)lst->content = size - i - 1;
-				break;
+				break ;
 			}
 			i++;
 		}
@@ -156,7 +162,7 @@ t_list	*sort(t_list *lst)
 	free(arr);
 	return (l);
 }
-int	lst_isOrdered(t_list *s1)
+int		lst_isOrdered(t_list *s1)
 {
 	while (s1->next != NULL)
 	{
@@ -194,12 +200,13 @@ int radix_sort(t_list *s1, t_list *s2)
 			j = j << 1;
 		}
 		l = lst;
-			while (l != NULL){
-				free(l->content);
-				lst = l->next;
-				free(l);
-				l = lst;
-			}
+		while (l != NULL)
+		{
+			free(l->content);
+			lst = l->next;
+			free(l);
+			l = lst;
+		}
 	}
-	return 0;
+	return (0);
 }

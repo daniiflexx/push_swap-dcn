@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:03:48 by danicn            #+#    #+#             */
-/*   Updated: 2022/09/28 13:24:39 by danicn           ###   ########.fr       */
+/*   Updated: 2022/10/04 19:15:48 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int     rrotate_rr(t_list **s1, t_list **s2);
 int     rrotate_a(t_list **s1);
 int     rrotate_(t_list **s1);
 int     less_than_six(t_list **s1, t_list **s2, int argc);
-int	    three_nums(t_list **s1);
-int     four_nums(t_list **s1, t_list **s2);
-int     five_nums(t_list **s1, t_list **s2);
+void    three_nums(t_list **s1);
+void     four_nums(t_list **s1, t_list **s2);
+void     five_nums(t_list **s1, t_list **s2);
 int     radix_sort(t_list *s1, t_list *s2);
 int     lst_isOrdered(t_list *s1);
-
+void	insertion_sort(int arr[], int n);
 
 #endif
