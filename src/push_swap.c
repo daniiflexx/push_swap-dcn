@@ -6,11 +6,17 @@
 /*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:51:31 by danicn            #+#    #+#             */
-/*   Updated: 2022/10/04 18:56:54 by dcruz-na         ###   ########.fr       */
+/*   Updated: 2022/10/10 22:14:13 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	exit_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
 
 void	int_free(void *num)
 {
@@ -34,7 +40,7 @@ int	init_stacks(t_list **stack1, t_list **stack2, char **argv, int argc)
 	while (--argc >= 1)
 	{
 		num = (int *) malloc(sizeof(int));
-		if (num == NULL) 
+		if (num == NULL)
 			return (1);
 		*num = ft_atoi(argv[argc]);
 		list = ft_lstnew(num);
@@ -61,21 +67,37 @@ int	less_than_six(t_list **s1, t_list **s2, int argc)
 	return (0);
 }
 
+void	args_err(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (argv[i] != NULL)
+	{
+		if (ft_strlen(argv[i]) > 11)
+			exit_error();
+		j = 0;
+		while (argv[i][j] != 0)
+		{
+			if ((argv[i][j] < '0' || argv[i][j] > '9') && argv[i][j] != '-')
+				exit_error();
+			j++;
+		}
+		i++;
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	t_list	*stack1;
 	t_list	*stack2;
 
 	if (argc < 2)
-	{		
-		write(2, "Error\n", 6);
 		return (1);
-	}
+	args_err(argv);
 	if (init_stacks(&stack1, &stack2, argv, argc) > 0)
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
+		exit_error();
 	if (lst_isOrdered(stack1) == 0)
 	{
 		if (argc < 7)
