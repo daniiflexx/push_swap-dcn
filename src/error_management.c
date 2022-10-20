@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_management.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 17:40:58 by danicn            #+#    #+#             */
-/*   Updated: 2022/10/15 18:51:18 by danicn           ###   ########.fr       */
+/*   Updated: 2022/10/20 19:51:16 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ long	ft_atol(const char *s)
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
@@ -53,8 +53,8 @@ int	ft_strcmp(char *s1, char *s2)
 void	equal_number(char **argv, int i)
 {
 	int	k;
-	int q;
-	
+	int	q;
+
 	q = 0;
 	k = 1;
 	while (k < i)
@@ -66,7 +66,7 @@ void	equal_number(char **argv, int i)
 	}
 }
 
-void	limits(char *arg) 
+void	limits(char *arg)
 {
 	int		v;
 	long	num;

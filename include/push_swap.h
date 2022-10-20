@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 17:03:48 by danicn            #+#    #+#             */
-/*   Updated: 2022/10/15 19:13:39 by danicn           ###   ########.fr       */
+/*   Updated: 2022/10/20 19:47:31 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,18 @@ void	rrotate_rr(t_list **s1, t_list **s2);
 void	rrotate_a(t_list **s1);
 void	rrotate_(t_list **s1);
 void	less_than_six(t_list **s1, t_list **s2, int argc);
-void    three_nums(t_list **s1);
+void	three_nums(t_list **s1);
 void	four_nums(t_list **s1, t_list **s2);
 void	five_nums(t_list **s1, t_list **s2);
 void	radix_sort(t_list *s1, t_list *s2);
-int     lst_isOrdered(t_list *s1);
+int		lst_isordered(t_list *s1);
 void	insertion_sort(int arr[], int n);
 void	args_err(char **argv);
 void	limits(char *arg);
 void	equal_number(char **argv, int i);
-int     ft_strcmp(char *s1, char *s2);
+int		ft_strcmp(char *s1, char *s2);
 long	ft_atol(const char *s);
 void	exit_error(void);
+void	minibucle(t_list **lst, t_list **s2, int *j);
 
 #endif

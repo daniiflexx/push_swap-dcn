@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithms2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 18:17:02 by danicn            #+#    #+#             */
-/*   Updated: 2022/10/15 19:17:47 by danicn           ###   ########.fr       */
+/*   Updated: 2022/10/20 19:49:35 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ void	insertion_sort(int arr[], int n)
 	}
 }
 
-void    bucle_sort(t_list *lst, int size, int *arr)
+void	bucle_sort(t_list *lst, int size, int *arr)
 {
-    int i;
-    
-        while (lst != NULL)
+	int	i;
+
+	while (lst != NULL)
 	{
 		i = 0;
 		while (i < size)
@@ -79,7 +79,7 @@ t_list	*sort(t_list *lst)
 	return (l);
 }
 
-int		lst_isOrdered(t_list *s1)
+int	lst_isordered(t_list *s1)
 {
 	while (s1->next != NULL)
 	{
@@ -92,20 +92,20 @@ int		lst_isOrdered(t_list *s1)
 
 void	radix_sort(t_list *s1, t_list *s2)
 {
-	t_list *lst;
-	int size;
-	int	i;
-	int	j;
+	t_list	*lst;
+	int		size;
+	int		i;
+	int		j;
 
-	if (lst_isOrdered(s1) == 0)
+	if (lst_isordered(s1) == 0)
 	{
 		lst = sort(s1);
 		size = ft_lstsize(lst);
 		j = 1;
-		while (lst_isOrdered(lst) == 0)
+		while (lst_isordered(lst) == 0)
 		{	
 			i = 0;
-			while (i < size && lst_isOrdered(lst) == 0)
+			while (i < size && lst_isordered(lst) == 0)
 			{
 				if (*(int *)ft_lstlast(lst)->content & j)
 					rotate_a(&lst);
@@ -113,9 +113,7 @@ void	radix_sort(t_list *s1, t_list *s2)
 					push_b(&lst, &s2);
 				i++;
 			}
-			while (ft_lstsize(s2))
-				push_a(&lst, &s2);
-			j = j << 1;
+			minibucle(&lst, &s2, &j);
 		}
 	}
 }

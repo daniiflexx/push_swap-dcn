@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libstack3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:04:15 by dcruz-na          #+#    #+#             */
-/*   Updated: 2022/10/15 18:01:55 by danicn           ###   ########.fr       */
+/*   Updated: 2022/10/20 19:47:16 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,11 @@ void	rotate(t_list **s1)
 	lst = *s1;
 	*s1 = last;
 	last->next = lst;
+}
+
+void	minibucle(t_list **lst, t_list **s2, int *j)
+{
+	while (ft_lstsize(*s2))
+		push_a(lst, s2);
+	*j = (*j) << 1;
 }

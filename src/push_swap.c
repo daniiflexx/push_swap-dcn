@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:51:31 by danicn            #+#    #+#             */
-/*   Updated: 2022/10/15 19:07:40 by danicn           ###   ########.fr       */
+/*   Updated: 2022/10/20 19:32:23 by dcruz-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	int_free(void *num)
 
 void	exit_stacks(int *n, t_list *l)
 {
-	if (l != NULL)		
+	if (l != NULL)
 		ft_lstclear(&l, int_free);
 	if (n != NULL)
 		free(n);
@@ -68,7 +68,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	args_err(argv);
 	init_stacks(&stack1, &stack2, argv, argc);
-	if (lst_isOrdered(stack1) == 0)
+	if (lst_isordered(stack1) == 0)
 	{
 		if (argc < 7)
 			less_than_six(&stack1, &stack2, argc);
