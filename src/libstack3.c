@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   libstack3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 19:04:15 by dcruz-na          #+#    #+#             */
-/*   Updated: 2022/10/04 19:51:58 by dcruz-na         ###   ########.fr       */
+/*   Updated: 2022/10/15 18:01:55 by danicn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	push_b(t_list **s1, t_list **s2)
+void	push_b(t_list **s1, t_list **s2)
 {
 	t_list	*last;
 	t_list	*lst;
 
 	last = ft_lstlast(*s1);
 	if (!last)
-		return (-1);
+		return ;
 	if ((*s1)->next == NULL)
 		*s1 = NULL;
 	else
@@ -31,16 +31,15 @@ int	push_b(t_list **s1, t_list **s2)
 	}
 	ft_lstadd_back(s2, last);
 	write(1, "pb\n", 3);
-	return (0);
 }
 
-int	rotate_a(t_list **s1)
+void	rotate_a(t_list **s1)
 {
 	t_list	*lst;
 	t_list	*last;
 
 	if (ft_lstsize(*s1) < 2)
-		return (-1);
+		return ;
 	lst = *s1;
 	while (lst->next->next != NULL)
 		lst = lst->next;
@@ -50,16 +49,15 @@ int	rotate_a(t_list **s1)
 	*s1 = last;
 	last->next = lst;
 	write(1, "ra\n", 3);
-	return (0);
 }
 
-int	rotate_b(t_list **s1)
+void	rotate_b(t_list **s1)
 {
 	t_list	*lst;
 	t_list	*last;
 
 	if (ft_lstsize(*s1) < 2)
-		return (-1);
+		return ;
 	lst = *s1;
 	while (lst->next->next != NULL)
 		lst = lst->next;
@@ -69,16 +67,15 @@ int	rotate_b(t_list **s1)
 	*s1 = last;
 	last->next = lst;
 	write(1, "rb\n", 3);
-	return (0);
 }
 
-int	rotate(t_list **s1)
+void	rotate(t_list **s1)
 {
 	t_list	*lst;
 	t_list	*last;
 
 	if (ft_lstsize(*s1) < 2)
-		return (-1);
+		return ;
 	lst = *s1;
 	while (lst->next->next != NULL)
 		lst = lst->next;
@@ -87,5 +84,4 @@ int	rotate(t_list **s1)
 	lst = *s1;
 	*s1 = last;
 	last->next = lst;
-	return (0);
 }

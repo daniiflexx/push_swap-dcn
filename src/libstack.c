@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   libstack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcruz-na <dcruz-na@student.42.fr>          +#+  +:+       +#+        */
+/*   By: danicn <danicn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 11:48:48 by danicn            #+#    #+#             */
-/*   Updated: 2022/10/04 19:04:01 by dcruz-na         ###   ########.fr       */
+/*   Updated: 2022/10/15 17:56:47 by danicn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	swap(t_list **list)
+void	swap(t_list **list)
 {
 	t_list	*iter;
 	t_list	*aux;
 
 	if (!list || (*list)->next == NULL)
-		return (-1);
+		return ;
 	if ((*list)->next->next == NULL)
 	{
 		aux = (*list);
@@ -36,16 +36,15 @@ int	swap(t_list **list)
 		iter->next->next = aux;
 		aux->next = NULL;
 	}
-	return (0);
 }
 
-int	swap_a(t_list **list)
+void	swap_a(t_list **list)
 {
 	t_list	*iter;
 	t_list	*aux;
 
 	if (!list || (*list)->next == NULL)
-		return (-1);
+		return ;
 	if ((*list)->next->next == NULL)
 	{
 		aux = (*list);
@@ -64,16 +63,15 @@ int	swap_a(t_list **list)
 		aux->next = NULL;
 	}
 	write(1, "sa\n", 3);
-	return (0);
 }
 
-int	swap_b(t_list **list)
+void	swap_b(t_list **list)
 {
 	t_list	*iter;
 	t_list	*aux;
 
 	if (!list || (*list)->next == NULL)
-		return (-1);
+		return ;
 	if ((*list)->next->next == NULL)
 	{
 		aux = (*list);
@@ -92,27 +90,21 @@ int	swap_b(t_list **list)
 		aux->next = NULL;
 	}
 	write(1, "sb\n", 3);
-	return (0);
 }
 
-int	swap_ab(t_list **list, t_list **list2)
+void	swap_ab(t_list **list, t_list **list2)
 {
-	if (swap(list) < 0)
-		return (-1);
-	if (swap(list2) < 0)
-		return (-1);
+	swap(list);
+	swap(list2);
 	write(1, "ss\n", 3);
-	return (0);
 }
 
-int	push_a(t_list **s1, t_list **s2)
+void	push_a(t_list **s1, t_list **s2)
 {
 	t_list	*last;
 	t_list	*lst;
 
 	last = ft_lstlast(*s2);
-	if (!last)
-		return (-1);
 	if ((*s2)->next == NULL)
 		*s2 = NULL;
 	else
@@ -124,5 +116,4 @@ int	push_a(t_list **s1, t_list **s2)
 	}
 	ft_lstadd_back(s1, last);
 	write(1, "pa\n", 3);
-	return (0);
 }
